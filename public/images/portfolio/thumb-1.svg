@@ -1,0 +1,17 @@
+<svg width="480" height="320" viewBox="0 0 480 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad$" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e8f4ff"/>
+      <stop offset="100%" stop-color="#cfe7ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="480" height="320" rx="28" fill="url(#grad$)" />
+  <rect x="32" y="48" width="416" height="180" rx="18" fill="#1f7fe8" fill-opacity="0.14"/>
+  <rect x="48" y="70" width="180" height="16" rx="8" fill="#0f3f70" fill-opacity="0.55"/>
+  <rect x="48" y="98" width="240" height="12" rx="6" fill="#0f3f70" fill-opacity="0.35"/>
+  <rect x="48" y="120" width="190" height="12" rx="6" fill="#0f3f70" fill-opacity="0.35"/>
+  <rect x="48" y="154" width="260" height="14" rx="7" fill="#1f7fe8" fill-opacity="0.7"/>
+  <rect x="48" y="184" width="220" height="12" rx="6" fill="#0f3f70" fill-opacity="0.28"/>
+  <rect x="48" y="210" width="150" height="12" rx="6" fill="#0f3f70" fill-opacity="0.28"/>
+  <rect x="48" y="246" width="180" height="16" rx="8" fill="#1f7fe8" fill-opacity="0.9"/>
+</svg>

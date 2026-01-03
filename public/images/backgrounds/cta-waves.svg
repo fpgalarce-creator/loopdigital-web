@@ -1,0 +1,12 @@
+<svg width="1600" height="400" viewBox="0 0 1600 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="ctaGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e0f1ff"/>
+      <stop offset="50%" stop-color="#f7fbff"/>
+      <stop offset="100%" stop-color="#d6e8ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="400" fill="url(#ctaGrad)"/>
+  <path d="M0 220C300 260 620 230 900 250C1180 270 1360 330 1600 310V400H0V220Z" fill="#429cff" fill-opacity="0.08"/>
+  <path d="M0 280C300 320 600 300 900 330C1200 360 1400 360 1600 330V400H0V280Z" fill="#1f7fe8" fill-opacity="0.07"/>
+</svg>

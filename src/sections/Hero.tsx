@@ -67,14 +67,16 @@ export default function Hero() {
             <div className="absolute -right-4 -bottom-6 h-20 w-20 rounded-2xl bg-cyan-300/30 blur-2xl" />
             <div className="relative overflow-hidden rounded-[24px] border border-white/30 bg-white/90 shadow-card">
               <SmartImage
-                src={getMockupImage('laptop-hero.svg')}
+                localSrc={getMockupImage('laptop-hero.svg')}
+                cloudPublicId="hero/laptop-hero"
                 alt="Mockup de laptop"
                 className="h-auto w-full"
-                rounded={false}
+                priority
               />
               <div className="absolute -left-10 bottom-6 w-32 rotate-[-6deg] rounded-2xl border border-white/70 bg-white/90 p-2 shadow-soft">
                 <SmartImage
-                  src={getMockupImage('phone-hero.svg')}
+                  localSrc={getMockupImage('phone-hero.svg')}
+                  cloudPublicId="hero/phone-hero"
                   alt="Mockup móvil"
                   className="w-full rounded-xl shadow-lg"
                 />

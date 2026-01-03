@@ -31,7 +31,7 @@ npm run preview
 - `/src/App.tsx`: orquestación de la landing.
 - `/src/components`: Navbar, SmartImage (carga local/remota con placeholder), ImageCarousel y Footer.
 - `/src/sections`: Hero, BenefitsRow, Services, CTASection, Plans, Portfolio, About, Contact.
-- `/src/lib/images.ts`: helper para rutas locales y `buildCloudinaryUrl` (usa `VITE_CLOUDINARY_CLOUD_NAME` y `VITE_CLOUDINARY_BASE_FOLDER`; si faltan, devuelve `null`).
+- `/src/lib/images.ts`: helper centralizado para rutas locales, detección de Cloudinary y resolución de imágenes con fallback seguro.
 - `/public/mockups`: mockups del hero (laptop y teléfono) listos para reemplazar.
 - `/public/images`: fondos, íconos, carrusel y placeholders del portafolio.
 
@@ -54,3 +54,12 @@ VITE_CLOUDINARY_CLOUD_NAME=
 VITE_CLOUDINARY_BASE_FOLDER=
 ```
 Si no se configuran, la app usa las imágenes locales en `public/`.
+
+## Gestión de imágenes
+- **Locales (por defecto)**: mantén los archivos en `public/images/...` y `public/mockups/...`. Usa rutas relativas con los helpers `getLocalImage` y `getMockupImage`, o pásalas a `<SmartImage localSrc="/images/..." />` sin tocar estilos ni layout.
+- **Cloudinary (opcional)**: define `VITE_CLOUDINARY_CLOUD_NAME` y, si usas un prefijo común, `VITE_CLOUDINARY_BASE_FOLDER`. Al proveer `cloudPublicId` en `SmartImage`, la URL se generará con `f_auto,q_auto,dpr_auto` y las dimensiones solicitadas.
+  - Ejemplo de `cloudPublicId`: `loopdigital/hero/hero-bg` (se combina con `VITE_CLOUDINARY_BASE_FOLDER` si existe).
+- **Helper reutilizable**:
+  - `cloudinaryEnabled()` indica si hay `VITE_CLOUDINARY_CLOUD_NAME` configurada.
+  - `buildCloudinaryUrl(publicId, opts)` arma la URL con transformaciones responsivas (`width`, `height`, `crop` opcionales).
+  - `resolveImage({ localSrc, cloudPublicId, width })` elige Cloudinary si está disponible y tiene ID, o vuelve a la ruta local. Siempre devuelve un placeholder SVG si falta todo, asegurando que el layout no colapse.

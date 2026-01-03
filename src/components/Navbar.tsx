@@ -56,25 +56,15 @@ export default function Navbar() {
         {/* Brand / Logo */}
         <button
           onClick={() => handleNav('inicio')}
-          className="flex items-center gap-3 rounded-xl px-2 py-1 hover:bg-slate-50"
+          className="group flex items-center gap-3 rounded-xl px-2 py-1 transition hover:bg-slate-50"
           type="button"
           aria-label="Ir al inicio"
         >
           <img
             src="/images/brand/logoloopdigital2.svg"
             alt="LoopDigital"
-            className="     
-            h-12 md:h-14
-            w-auto
-            px-3 py-2
-            rounded-xl
-            transition-all
-            duration-200
-            hover:bg-slate-100
-            hover:scale-105
-            "
+            className="h-10 w-auto flex-shrink-0 object-contain transition duration-200 group-hover:scale-105 lg:h-14"
             loading="eager"
-            
           />
         </button>
 

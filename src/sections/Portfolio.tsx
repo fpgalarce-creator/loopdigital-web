@@ -5,6 +5,7 @@ const items = Array.from({ length: 6 }).map((_, idx) => ({
   title: `Proyecto ${idx + 1}`,
   tag: 'Landing / E-commerce',
   image: getLocalImage(`portfolio/thumb-${idx + 1}.svg`),
+  cloudId: `portfolio/thumb-${idx + 1}`,
 }));
 
 export default function Portfolio() {
@@ -21,7 +22,12 @@ export default function Portfolio() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((item) => (
             <article key={item.title} className="card overflow-hidden">
-              <SmartImage src={item.image} alt={item.title} className="h-48 w-full" />
+              <SmartImage
+                localSrc={item.image}
+                cloudPublicId={item.cloudId}
+                alt={item.title}
+                className="h-48 w-full"
+              />
               <div className="space-y-1 px-5 py-4">
                 <div className="text-xs font-semibold uppercase tracking-wide text-brand-600">{item.tag}</div>
                 <h3 className="text-lg font-bold text-slate-900">{item.title}</h3>

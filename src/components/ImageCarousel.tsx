@@ -4,9 +4,9 @@ import SmartImage from './SmartImage';
 import { getLocalImage } from '../lib/images';
 
 const slides = [
-  { src: getLocalImage('carousel/slide-1.svg'), title: 'Landing creativa' },
-  { src: getLocalImage('carousel/slide-2.svg'), title: 'E-commerce UI' },
-  { src: getLocalImage('carousel/slide-3.svg'), title: 'Dashboard adaptable' },
+  { localSrc: getLocalImage('carousel/slide-1.svg'), cloudId: 'carousel/slide-1', title: 'Landing creativa' },
+  { localSrc: getLocalImage('carousel/slide-2.svg'), cloudId: 'carousel/slide-2', title: 'E-commerce UI' },
+  { localSrc: getLocalImage('carousel/slide-3.svg'), cloudId: 'carousel/slide-3', title: 'Dashboard adaptable' },
 ];
 
 export default function ImageCarousel() {
@@ -40,8 +40,13 @@ export default function ImageCarousel() {
             style={{ transform: `translateX(-${index * 100}%)` }}
           >
             {slides.map((slide) => (
-              <div key={slide.src} className="w-full flex-shrink-0">
-                <SmartImage src={slide.src} alt={slide.title} className="h-64 w-full" />
+              <div key={slide.title} className="w-full flex-shrink-0">
+                <SmartImage
+                  localSrc={slide.localSrc}
+                  cloudPublicId={slide.cloudId}
+                  alt={slide.title}
+                  className="h-64 w-full"
+                />
                 <p className="p-3 text-center text-sm font-semibold text-slate-700">{slide.title}</p>
               </div>
             ))}

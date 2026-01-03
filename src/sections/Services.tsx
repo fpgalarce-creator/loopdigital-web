@@ -47,7 +47,7 @@ export default function Services() {
                   <Icon className="h-6 w-6" />
                 </div>
                 <SmartImage
-                  src={image}
+                  localSrc={image}
                   alt={title}
                   className="h-12 w-12 rounded-full bg-white object-contain"
                 />

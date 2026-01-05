@@ -1,6 +1,5 @@
-import { ArrowRight, Sparkles } from 'lucide-react';
-import SmartImage from '../components/SmartImage';
-import { getMockupImage } from '../lib/images';
+import { Sparkles } from 'lucide-react';
+import HeroCarousel from '../components/HeroCarousel';
 import Button from '../components/ui/Button';
 
 export default function Hero() {
@@ -65,29 +64,7 @@ export default function Hero() {
           <div className="relative mx-auto max-w-xl rounded-[28px] bg-white/10 p-4 shadow-card backdrop-blur">
             <div className="absolute -left-6 -top-6 h-16 w-16 rounded-2xl bg-gradient-to-br from-white/40 to-white/10 blur-lg" />
             <div className="absolute -right-4 -bottom-6 h-20 w-20 rounded-2xl bg-cyan-300/30 blur-2xl" />
-            <div className="relative overflow-hidden rounded-[24px] border border-white/30 bg-white/90 shadow-card">
-              <SmartImage
-                localSrc={getMockupImage('laptop-hero.svg')}
-                cloudPublicId="hero/laptop-hero"
-                alt="Mockup de laptop"
-                className="h-auto w-full"
-                priority
-              />
-              <div className="absolute -left-10 bottom-6 w-32 rotate-[-6deg] rounded-2xl border border-white/70 bg-white/90 p-2 shadow-soft">
-                <SmartImage
-                  localSrc={getMockupImage('phone-hero.svg')}
-                  cloudPublicId="hero/phone-hero"
-                  alt="Mockup móvil"
-                  className="w-full rounded-xl shadow-lg"
-                />
-              </div>
-              <div className="absolute right-4 top-4 flex items-center gap-2 rounded-full bg-white/90 px-3 py-2 text-xs font-semibold text-brand-700 shadow-soft">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-brand-500 text-white">
-                  <ArrowRight className="h-4 w-4" />
-                </span>
-                Landing lista para convertir
-              </div>
-            </div>
+            <HeroCarousel />
           </div>
         </div>
       </div>

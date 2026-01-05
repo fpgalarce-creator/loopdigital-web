@@ -53,44 +53,48 @@ export default function Navbar() {
   return (
     <header className="fixed inset-x-0 top-0 z-30 bg-white/80 backdrop-blur-md shadow">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:px-8">
-        {/* Brand / Logo */}
+
+        {/* LOGO */}
         <button
           onClick={() => handleNav('inicio')}
-          className="group flex items-center gap-3 rounded-xl px-2 py-1 transition hover:bg-slate-50"
+          className="flex items-center gap-3 rounded-xl px-2 py-1 transition hover:bg-slate-50"
           type="button"
           aria-label="Ir al inicio"
         >
           <img
             src="/images/brand/logoloopdigital2.svg"
             alt="LoopDigital"
-            className="h-10 w-auto flex-shrink-0 object-contain transition duration-200 group-hover:scale-105 lg:h-14"
+            className="
+          h-12 w-auto
+          md:h-12
+          lg:h-10
+          transition-transform
+        "
             loading="eager"
           />
         </button>
 
-        {/* Desktop nav */}
+        {/* NAV */}
         <nav className="hidden items-center gap-2 text-sm font-semibold text-slate-700 lg:flex">
           {navLinks.map((link) => (
             <button
               key={link.href}
               type="button"
-              className={`relative rounded-full px-4 py-2 transition ${
-                activeSection === link.href
+              className={`relative rounded-full px-4 py-2 transition ${activeSection === link.href
                   ? 'bg-brand-50 text-brand-700 shadow-inner ring-1 ring-brand-100'
                   : 'hover:bg-slate-100 hover:text-brand-600'
-              }`}
+                }`}
               onClick={() => handleNav(link.href)}
             >
               {link.label}
             </button>
           ))}
-
           <Button variant="primary" size="md" onClick={() => handleNav('contacto')}>
             Cotizar
           </Button>
         </nav>
 
-        {/* Mobile toggle */}
+        {/* MOBILE */}
         <button
           className="inline-flex items-center justify-center rounded-xl border border-slate-200 p-2 text-slate-700 transition hover:bg-slate-50 lg:hidden"
           onClick={() => setOpen((prev) => !prev)}
@@ -99,7 +103,9 @@ export default function Navbar() {
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
+
       </div>
+
 
       {/* Mobile menu */}
       {open && (
@@ -109,9 +115,8 @@ export default function Navbar() {
               <button
                 key={link.href}
                 type="button"
-                className={`w-full rounded-xl px-3 py-3 text-left transition ${
-                  activeSection === link.href ? 'bg-brand-50 text-brand-700' : 'hover:bg-brand-50'
-                }`}
+                className={`w-full rounded-xl px-3 py-3 text-left transition ${activeSection === link.href ? 'bg-brand-50 text-brand-700' : 'hover:bg-brand-50'
+                  }`}
                 onClick={() => handleNav(link.href)}
               >
                 {link.label}
